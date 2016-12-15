@@ -100,7 +100,16 @@ var TextBoxIntellisense = (function () {
             var keyCode = item.keyCode || 0;
             var preventDefault = item.preventDefault || false;
             if (evt.keyCode === keyCode && evt.shiftKey === shiftKey && evt.ctrlKey === ctrlKey) {
-                this.startColumnIndex = this.getCaretOffset();
+                if (evt.keyCode !== 8) {
+                    this.startColumnIndex = this.getCaretOffset();
+                } else {
+                    var lastIndex = this.editor.value.lastIndexOf('.');
+                    if (lastIndex !== -1) {
+                        this.startColumnIndex = lastIndex + 1;
+                    } else {
+                        this.startColumnIndex = 0;
+                    }
+                } 
                 callback(item);
                 if (preventDefault) {
                     evt.preventDefault();
