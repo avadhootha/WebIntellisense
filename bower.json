@@ -1,0 +1,21 @@
+{
+  "name": "web-intellisense",
+  "homepage": "https://github.com/avadhootha/WebIntellisense",
+  "authors": [
+    "Avadhootha Chaitanya"
+  ],
+  "version": "1.0.0",
+  "description": "Web Intellisense",
+  "main": "src/js/lib/webintellisense.js",
+  "keywords": [
+    "WebIntellisense"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
